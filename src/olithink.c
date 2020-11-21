@@ -1446,7 +1446,7 @@ void printPerft(int c, int i) {
 
 char comreturn[][9] = {"xboard", ".", "bk", "draw", "hint", "computer", "accepted", "rejected", // ignored
 						"quit", "new", "remove", "analyze", "exit", "force", "undo"}; // return 6-index
-char* feature = "feature setboard=1 myname=\"OliThink "VER"\" colors=0 analyze=1 ping=1 sigint=0 sigterm=0 done=1";
+char* feature = "feature setboard=1 myname=\"OliThink "VER"\" variants=\"normal\" colors=0 analyze=1 ping=1 sigint=0 sigterm=0 done=1";
 int protV2(char* buf, int parse) {
 	if (!strncmp(buf,"protover",8)) printf("%s\n", feature);
 	else if (!strncmp(buf,"ping",4)) { buf[1] = 'o'; printf("%s", buf); fgets(buf,255,stdin); return protV2(buf, 0); }
